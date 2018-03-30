@@ -4,6 +4,6 @@ import Hello from './Hello';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Hello />, div);
+  ReactDOM.render(<Hello message="World" />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
