@@ -11,7 +11,7 @@ const styles = theme => ({
   },
 });
 
-function Index(_props) {
+function Hello(_props) {
   return (
     <div>
       <Button color="primary" >
@@ -21,4 +21,4 @@ function Index(_props) {
 }
 
 
-export default withRoot(withStyles(styles)(Index));
+export default withRoot(withStyles(styles)(Hello));
