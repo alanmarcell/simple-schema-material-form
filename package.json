@@ -7,7 +7,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "lint": "eslint src",
-    "doc:serve": "styleguidist server"
+    "doc:serve": "styleguidist server",
+    "doc:build": "styleguidist build"
   },
   "dependencies": {
     "autoprefixer": "7.1.6",
