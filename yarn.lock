@@ -40,6 +40,15 @@
     puppeteer "^1.2.0"
     read-pkg-up "^3.0.0"
 
+"@storybook/addon-viewport@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-3.4.0.tgz#134d441047dec0b58deeaecb1afd35b0430e551a"
+  dependencies:
+    "@storybook/components" "3.4.0"
+    babel-runtime "^6.26.0"
+    global "^4.3.2"
+    prop-types "^15.6.1"
+
 "@storybook/addons@3.4.0", "@storybook/addons@^3.4.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.0.tgz#c1a96d32759df0117b7b9e50e33ff6c7f98b34c9"

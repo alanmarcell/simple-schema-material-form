@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, withState } from 'recompose';
-
+import { FormControl } from 'material-ui/Form';
 /** Our Simple Form */
 const Form = ({ name, children }) => {
   return (
-    <form >
+    <FormControl >
       {children}
-    </form>
+    </FormControl>
   );
 };
 
