@@ -4,7 +4,7 @@ exports[`renders without crashing 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <withState(TextField)
+  Symbol(enzyme.__unrendered__): <withState(TextInput)
     fieldName="World"
 />,
   Symbol(enzyme.__renderer__): Object {

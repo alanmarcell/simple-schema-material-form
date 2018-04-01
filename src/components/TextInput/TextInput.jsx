@@ -7,22 +7,22 @@ import { compose, withState } from 'recompose';
  * Component is described here.
  *
  */
-const TextField = ({
+const TextInput = ({
   fieldName, value, setvalue, ...props
 }) => {
   return (
     <MUITextField label={fieldName} onChange={evt => setvalue(evt.target.value)} value={value} {...props} />);
 };
 
-TextField.defaultProps = {
+TextInput.defaultProps = {
   value: 'Initial',
 };
 
-TextField.propTypes = {
+TextInput.propTypes = {
   value: PropTypes.string,
   fieldName: PropTypes.string.isRequired,
 };
 
 const enhanche = compose(withState('value', 'setvalue', ({ value }) => value));
 
-export default enhanche(TextField);
+export default enhanche(TextInput);
