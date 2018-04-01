@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, withState } from 'recompose';
 import { FormControl } from 'material-ui/Form';
+
 /** Our Simple Form */
 const Form = ({ children }) => {
   return (
@@ -19,6 +20,6 @@ Form.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
-const enhanche = compose(withState('doc', 'setDoc', {}));
+const enhance = compose(withState('doc', 'setDoc', {}));
 
-export default enhanche(Form);
+export default enhance(Form);

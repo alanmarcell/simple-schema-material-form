@@ -4,5 +4,5 @@ import Form from '../components/Form';
 import TextInput from '../components/TextInput';
 
 storiesOf('Form', module)
-  .add('with TextInput', () => <Form name="World" ><TextInput fieldName="hello" /></Form>);
+  .add('with TextInput', () => <Form name="World" ><TextInput fieldName="Hello" /></Form>);
 
