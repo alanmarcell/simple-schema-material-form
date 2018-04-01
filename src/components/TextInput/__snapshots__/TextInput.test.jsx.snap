@@ -4,8 +4,9 @@ exports[`renders without crashing 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <withState(TextInput)
+  Symbol(enzyme.__unrendered__): <withStateHandlers(component)
     fieldName="World"
+    value="Initial"
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -20,8 +21,8 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "fieldName": "World",
-      "setvalue": [Function],
-      "value": "Initial",
+      "onChange": [Function],
+      "value": "",
     },
     "ref": null,
     "rendered": null,
@@ -34,8 +35,8 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "fieldName": "World",
-        "setvalue": [Function],
-        "value": "Initial",
+        "onChange": [Function],
+        "value": "",
       },
       "ref": null,
       "rendered": null,

@@ -1,25 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots TextInput simple 1`] = `
-<div
-  class="MuiFormControl-root-1"
->
-  <label
-    class="MuiFormLabel-root-10 MuiInputLabel-root-5 MuiInputLabel-formControl-6 MuiInputLabel-animated-9 MuiInputLabel-shrink-8"
-    data-shrink="true"
-  >
-    World
-  </label>
+<div>
   <div
-    class="MuiInput-root-16 MuiInput-formControl-17 MuiInput-underline-20"
+    class="MuiFormControl-root-1"
   >
-    <input
-      aria-invalid="false"
-      aria-required="false"
-      class="MuiInput-input-24"
-      type="text"
-      value="Initial"
-    />
+    <div
+      class="MuiInput-root-5 MuiInput-formControl-6 MuiInput-underline-9"
+    >
+      <input
+        aria-invalid="false"
+        aria-required="false"
+        class="MuiInput-input-13"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
+  <p />
 </div>
 `;

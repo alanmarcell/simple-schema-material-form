@@ -75,9 +75,9 @@
   },
   "jest": {
     "coverageDirectory": "./coverage/",
-    "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
+      "src/**/*.{js,jsx,mjs}",
+      "!src/registerServiceWorker.js"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
