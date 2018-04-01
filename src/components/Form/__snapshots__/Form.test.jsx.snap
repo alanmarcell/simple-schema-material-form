@@ -19,6 +19,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
+      "children": null,
       "doc": Object {},
       "name": "World",
       "setDoc": [Function],
@@ -33,6 +34,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
+        "children": null,
         "doc": Object {},
         "name": "World",
         "setDoc": [Function],

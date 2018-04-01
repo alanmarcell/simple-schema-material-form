@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { compose, withState } from 'recompose';
 import { FormControl } from 'material-ui/Form';
 /** Our Simple Form */
-const Form = ({ name, children }) => {
+const Form = ({ children }) => {
   return (
     <FormControl >
       {children}
@@ -11,8 +11,12 @@ const Form = ({ name, children }) => {
   );
 };
 
+Form.defaultProps = {
+  children: null,
+};
+
 Form.propTypes = {
-  name: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 const enhanche = compose(withState('doc', 'setDoc', {}));
