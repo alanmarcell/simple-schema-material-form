@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { compose, withState } from 'recompose';
 
 /** Our Simple Form */
-const Form = ({ name }) => {
+const Form = ({ name, children }) => {
   return (
     <form >
-      {name}
+      {children}
     </form>
   );
 };
