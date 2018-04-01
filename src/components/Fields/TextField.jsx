@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { TextField as MUITextField } from 'material-ui';
 import { compose, withState } from 'recompose';
 
-/** Our Simple Form */
+/**
+ * Component is described here.
+ *
+ */
 const TextField = ({
   fieldName, value, setvalue, ...props
 }) => {
@@ -12,7 +15,7 @@ const TextField = ({
 };
 
 TextField.defaultProps = {
-  value: '',
+  value: 'Initial',
 };
 
 TextField.propTypes = {

@@ -1,6 +1,6 @@
 Form example:
 
-```js
+```jsx
 <Form name="Hello" >
   <TextField fieldName="name" />
 </Form>
