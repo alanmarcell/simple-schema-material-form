@@ -1,7 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { compose, withState } from 'recompose';
 
-const Form = _props => {
-  return (<div>FORM</div>);
+/** Our Simple Form */
+const Form = ({ name }) => {
+  return (
+    <form >
+      {name}
+    </form>
+  );
 };
 
-export default Form;
+Form.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+const enhanche = compose(withState('doc', 'setDoc', {}));
+
+export default enhanche(Form);

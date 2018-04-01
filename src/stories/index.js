@@ -21,9 +21,9 @@ storiesOf('Button', module)
   ));
 
 storiesOf('Form', module)
-  .add('with text', () => <Form onClick={action('clicked')}>Hello Form</Form>)
+  .add('with text', () => <Form name="World" >Hello Form</Form>)
   .add('with some emoji', () => (
-    <Form onClick={action('clicked')}>
+    <Form name="World" >
       <span role="img" aria-label="so cool">
         😀 😎 👍 💯
       </span>
@@ -31,9 +31,9 @@ storiesOf('Form', module)
   ));
 
 storiesOf('TextInput', module)
-  .add('with text', () => <TextInput onClick={action('clicked')}>Hello TextInput</TextInput>)
+  .add('with text', () => <TextInput fieldName="World">Hello TextInput</TextInput>)
   .add('with some emoji', () => (
-    <TextInput onClick={action('clicked')}>
+    <TextInput fieldName="World">
       <span role="img" aria-label="so cool">
         😀 😎 👍 💯
       </span>
