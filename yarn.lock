@@ -17,6 +17,22 @@
     react-inspector "^2.2.2"
     uuid "^3.2.1"
 
+"@storybook/addon-centered@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-centered/-/addon-centered-3.4.0.tgz#622fc377d533f0073434559d9960954043f7c69c"
+  dependencies:
+    babel-runtime "^6.26.0"
+    global "^4.3.2"
+
+"@storybook/addon-events@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-events/-/addon-events-3.4.0.tgz#438cc7d521226a033b6b9d72d48f9b9e4fc74b80"
+  dependencies:
+    babel-runtime "^6.26.0"
+    format-json "^1.0.3"
+    prop-types "^15.6.1"
+    react-textarea-autosize "^5.2.1"
+
 "@storybook/addon-links@3.4.0", "@storybook/addon-links@^3.4.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.0.tgz#638218a567b9318a72ab268963d7efcd47878164"
@@ -3928,6 +3944,10 @@ form-data@~2.3.1:
     combined-stream "1.0.6"
     mime-types "^2.1.12"
 
+format-json@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/format-json/-/format-json-1.0.3.tgz#268e3d3e169792ff49bb5b030f22c87ca1c2cd9f"
+
 forwarded@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
@@ -7770,6 +7790,12 @@ react-test-renderer@^16.0.0-0, react-test-renderer@^16.3.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
     react-is "^16.3.0"
+
+react-textarea-autosize@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-5.2.1.tgz#2b78f9067180f41b08ac59f78f1581abadd61e54"
+  dependencies:
+    prop-types "^15.6.0"
 
 react-transition-group@^1.1.2:
   version "1.2.1"
