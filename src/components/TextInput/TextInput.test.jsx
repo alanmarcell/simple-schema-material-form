@@ -12,7 +12,6 @@ it('renders without crashing', () => {
 
 it('renders without crashing', () => {
   const component = shallow(<TextInput fieldName="World" />);
-  component.dive();
   expect(component).toMatchSnapshot();
 });
 
@@ -22,23 +21,43 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it('renders with a TextInput', () => {
+
+it('Shallow with a TextInput', () => {
+  const component = shallow(<TextInput fieldName="hello" />);
+  const newValue = 'Type Sample';
+  let input = component.find('TextField');
+  input.simulate('change', {
+    target: { value: newValue },
+  });
+
+
+  let output = component.find('p');
+  input = component.find('TextField');
+
+  expect(output.text()).toBe(newValue);
+  expect(input.props().value).toBe(newValue);
+
+  input.simulate('change', { target: { value: 'empty' } });
+
+  output = component.find('p');
+  input = component.find('TextField');
+  expect(output.text()).toBe('empty');
+  expect(input.props().value).toBe('empty');
+});
+
+it('Mount with a TextInput', () => {
   const component = mount(<TextInput fieldName="hello" />);
   const newValue = 'Type Sample';
   const input = component.find('input');
   const output = component.find('p');
-
   input.simulate('change', {
-    persist() {
-      this.target = { value: newValue };
-    },
+    target: { value: newValue },
   });
 
-  const label = component.find('label');
-  expect(output.text()).toBe(newValue);
 
-  const { value } = component.state();
-  expect(value).toEqual(newValue);
+  const label = component.find('label');
+
+  expect(output.text()).toBe(newValue);
   expect(label.text()).toBe(newValue);
 
   input.simulate('change', { target: { value: 'empty' } });

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TextField } from 'material-ui';
-import { withStateHandlers, compose } from 'recompose';
+import { withStateHandlers, compose } from 'recompact';
 
 /**
  * Component is described here.
