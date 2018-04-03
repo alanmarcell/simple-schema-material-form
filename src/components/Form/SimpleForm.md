@@ -1,0 +1,5 @@
+# SimpleForm example
+
+```jsx
+<SimpleForm />
+```
