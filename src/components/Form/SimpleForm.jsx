@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, withStateHandlers, pure } from 'recompact';
-import TextField from '../TextInput';
+// import TextField from '../TextInput';
+import { TextField } from 'material-ui';
 
 /** Our Simple Form Test Utility */
-const simpleForm = (props) => {
+const SimpleForm = (props) => {
   const { setDoc } = props;
   const { doc } = props;
   const { test } = doc;
 
   return (
     <form >
-      <label value={test} htmlFor="defaultFormName">{test}</label>
-      <input id="defaultFormName" type="text" value={test} onChange={e => setDoc({ test: e.target.value })} />
-      <TextField />
+      {/* <label value={test} htmlFor="defaultFormName">{test}</label>
+      <input id="defaultFormName" type="text" value={test} onChange={e => setDoc({ test: e.target.value })} /> */}
+      <TextField label={test} value={test} onChange={e => setDoc({ test: e.target.value })} />
     </form>
   );
 };
@@ -33,16 +34,19 @@ const enhance = compose(
   ),
 );
 
-const SimpleForm = enhance(simpleForm);
+const EnhancedSimpleForm = enhance(SimpleForm);
 
 SimpleForm.defaultProps = {
   /** This is our fields */
-  children: null,
+  // children: null,
 };
 
 SimpleForm.propTypes = {
   /** doc defines the form state */
-  doc: PropTypes.object,
+  doc: PropTypes.object.isRequired,
+
+  /** handle the form state */
+  setDoc: PropTypes.func.isRequired,
 };
 
-export default SimpleForm;
+export default EnhancedSimpleForm;

@@ -7,7 +7,7 @@ import { withStateHandlers, compose } from 'recompact';
  * Component is described here.
  *
  */
-const component = ({ value, onChange }) => (
+const TextInput = ({ value, onChange }) => (
   <div>
     <TextField type="text" label={value} value={value} onChange={onChange} />
     <p>
@@ -25,7 +25,8 @@ const enhance = compose(withStateHandlers(
   },
 ));
 
-const TextInput = enhance(component);
+const EnhancedTextInput = enhance(TextInput);
+
 
 TextInput.defaultProps = {
   value: 'Initial',
@@ -35,4 +36,4 @@ TextInput.propTypes = {
   value: PropTypes.string,
 };
 
-export default TextInput;
+export default EnhancedTextInput;

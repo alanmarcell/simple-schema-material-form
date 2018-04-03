@@ -7,7 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <withState(Form)
     name="World"
 >
-    <withState(withStateHandlers(component)) />
+    <withState(withStateHandlers(TextInput)) />
 </withState(Form)>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -21,7 +21,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": <withState(withStateHandlers(component)) />,
+      "children": <withState(withStateHandlers(TextInput)) />,
       "doc": Object {},
       "name": "World",
       "setDoc": [Function],
@@ -44,7 +44,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "children": <withState(withStateHandlers(component)) />,
+        "children": <withState(withStateHandlers(TextInput)) />,
         "doc": Object {},
         "name": "World",
         "setDoc": [Function],
