@@ -1,12 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shallow a TextInput 1`] = `
+exports[`shallow a 2 TextInput 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <pure(withStateHandlers(SimpleForm))
-    name="World"
-/>,
+    onSubmit={[Function]}
+>
+    <TextField
+        fieldName="test"
+        required={false}
+        select={false}
+    />
+    <TextField
+        fieldName="test2"
+        required={false}
+        select={false}
+    />
+</pure(withStateHandlers(SimpleForm))>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -19,53 +30,39 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <TextField
-        label="Type Sample"
-        onChange={[Function]}
-        required={false}
-        select={false}
-        value="Type Sample"
+      "children": Array [
+        Array [
+          <TextField
+            label="test"
+            onChange={[Function]}
+            required={false}
+            select={false}
+            value="Type Sample"
 />,
+          <TextField
+            label="test2"
+            onChange={[Function]}
+            required={false}
+            select={false}
+            value="Type Sample"
+/>,
+        ],
+        <WithStyles(Button)
+          onClick={[Function]}
+>
+          Submit
+</WithStyles(Button)>,
+      ],
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "label": "Type Sample",
-        "onChange": [Function],
-        "required": false,
-        "select": false,
-        "value": "Type Sample",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-    "type": "form",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <TextField
-          label="Type Sample"
-          onChange={[Function]}
-          required={false}
-          select={false}
-          value="Type Sample"
-/>,
-      },
-      "ref": null,
-      "rendered": Object {
+    "rendered": Array [
+      Object {
         "instance": null,
-        "key": undefined,
+        "key": ".0",
         "nodeType": "function",
         "props": Object {
-          "label": "Type Sample",
+          "children": null,
+          "label": "test",
           "onChange": [Function],
           "required": false,
           "select": false,
@@ -75,6 +72,256 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": ".1",
+        "nodeType": "function",
+        "props": Object {
+          "children": null,
+          "label": "test2",
+          "onChange": [Function],
+          "required": false,
+          "select": false,
+          "value": "Type Sample",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Submit",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Submit",
+        "type": [Function],
+      },
+    ],
+    "type": "form",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [
+            <TextField
+              label="test"
+              onChange={[Function]}
+              required={false}
+              select={false}
+              value="Type Sample"
+/>,
+            <TextField
+              label="test2"
+              onChange={[Function]}
+              required={false}
+              select={false}
+              value="Type Sample"
+/>,
+          ],
+          <WithStyles(Button)
+            onClick={[Function]}
+>
+            Submit
+</WithStyles(Button)>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": ".0",
+          "nodeType": "function",
+          "props": Object {
+            "children": null,
+            "label": "test",
+            "onChange": [Function],
+            "required": false,
+            "select": false,
+            "value": "Type Sample",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": ".1",
+          "nodeType": "function",
+          "props": Object {
+            "children": null,
+            "label": "test2",
+            "onChange": [Function],
+            "required": false,
+            "select": false,
+            "value": "Type Sample",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Submit",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": [Function],
+        },
+      ],
+      "type": "form",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`shallow a TextInput 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <pure(withStateHandlers(SimpleForm))
+    onSubmit={[Function]}
+>
+    <TextField
+        fieldName="test"
+        required={false}
+        select={false}
+    />
+</pure(withStateHandlers(SimpleForm))>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        Array [
+          <TextField
+            label="test"
+            onChange={[Function]}
+            required={false}
+            select={false}
+            value="Type Sample"
+/>,
+        ],
+        <WithStyles(Button)
+          onClick={[Function]}
+>
+          Submit
+</WithStyles(Button)>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": ".0",
+        "nodeType": "function",
+        "props": Object {
+          "children": null,
+          "label": "test",
+          "onChange": [Function],
+          "required": false,
+          "select": false,
+          "value": "Type Sample",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Submit",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Submit",
+        "type": [Function],
+      },
+    ],
+    "type": "form",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [
+            <TextField
+              label="test"
+              onChange={[Function]}
+              required={false}
+              select={false}
+              value="Type Sample"
+/>,
+          ],
+          <WithStyles(Button)
+            onClick={[Function]}
+>
+            Submit
+</WithStyles(Button)>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": ".0",
+          "nodeType": "function",
+          "props": Object {
+            "children": null,
+            "label": "test",
+            "onChange": [Function],
+            "required": false,
+            "select": false,
+            "value": "Type Sample",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Submit",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": [Function],
+        },
+      ],
       "type": "form",
     },
   ],

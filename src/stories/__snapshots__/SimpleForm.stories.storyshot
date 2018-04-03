@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots SimpleForm with 2 TextInput 1`] = `
+<form>
+  <div
+    class="MuiFormControl-root-1"
+  >
+    <label
+      class="MuiFormLabel-root-24 MuiInputLabel-root-19 MuiInputLabel-formControl-20 MuiInputLabel-animated-23"
+      data-shrink="false"
+    >
+      test
+    </label>
+    <div
+      class="MuiInput-root-5 MuiInput-formControl-6 MuiInput-underline-9"
+    >
+      <input
+        aria-invalid="false"
+        aria-required="false"
+        class="MuiInput-input-13"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="MuiFormControl-root-1"
+  >
+    <label
+      class="MuiFormLabel-root-24 MuiInputLabel-root-19 MuiInputLabel-formControl-20 MuiInputLabel-animated-23"
+      data-shrink="false"
+    >
+      test2
+    </label>
+    <div
+      class="MuiInput-root-5 MuiInput-formControl-6 MuiInput-underline-9"
+    >
+      <input
+        aria-invalid="false"
+        aria-required="false"
+        class="MuiInput-input-13"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <button
+    class="MuiButtonBase-root-45 MuiButton-root-30"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label-31"
+    >
+      Submit
+    </span>
+    <span
+      class="MuiTouchRipple-root-48"
+    />
+  </button>
+</form>
+`;
+
+exports[`Storyshots SimpleForm with TextInput 1`] = `
+<form>
+  <div
+    class="MuiFormControl-root-1"
+  >
+    <label
+      class="MuiFormLabel-root-24 MuiInputLabel-root-19 MuiInputLabel-formControl-20 MuiInputLabel-animated-23"
+      data-shrink="false"
+    >
+      test
+    </label>
+    <div
+      class="MuiInput-root-5 MuiInput-formControl-6 MuiInput-underline-9"
+    >
+      <input
+        aria-invalid="false"
+        aria-required="false"
+        class="MuiInput-input-13"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <button
+    class="MuiButtonBase-root-45 MuiButton-root-30"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label-31"
+    >
+      Submit
+    </span>
+    <span
+      class="MuiTouchRipple-root-48"
+    />
+  </button>
+</form>
+`;

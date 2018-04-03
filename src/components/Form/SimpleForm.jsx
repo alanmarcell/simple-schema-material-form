@@ -1,20 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { omit, pathOr, merge } from 'ramda';
 import { compose, withStateHandlers, pure } from 'recompact';
 // import TextField from '../TextInput';
-import { TextField } from 'material-ui';
+import { Button } from 'material-ui';
+
+const getChildProps = ({ doc, setDoc }) => Child => {
+  const cProps = omit(['fieldName'], Child.props);
+  const { fieldName } = Child.props;
+  const value = pathOr('', [fieldName], doc);
+
+  const childProps = {
+    ...cProps,
+    onChange: e => setDoc({ [fieldName]: e.target.value }),
+    value,
+    label: fieldName,
+  };
+
+  return React.createElement(
+    Child.type,
+    childProps,
+    null,
+  );
+};
 
 /** Our Simple Form Test Utility */
 const SimpleForm = (props) => {
-  const { setDoc } = props;
-  const { doc } = props;
-  const { test } = doc;
-
+  const { doc, setDoc, onSubmit } = props;
+  const setChildProps = getChildProps({ doc, setDoc });
   return (
     <form >
-      {/* <label value={test} htmlFor="defaultFormName">{test}</label>
-      <input id="defaultFormName" type="text" value={test} onChange={e => setDoc({ test: e.target.value })} /> */}
-      <TextField label={test} value={test} onChange={e => setDoc({ test: e.target.value })} />
+      {React.Children.map(props.children, setChildProps)}
+      <Button onClick={() => onSubmit(doc)} >Submit</Button>
     </form>
   );
 };
@@ -24,12 +41,15 @@ const enhance = compose(
   pure,
   withStateHandlers(
     /** this our initial doc */
-    { doc: { test: 'test' } },
+    { doc: {} },
     {
       /** this is the doc state handler */
-      setDoc: () => value => ({
-        doc: value,
-      }),
+      setDoc: ({ doc }) => value => {
+        const merged = merge(doc, value);
+        return {
+          doc: merged,
+        };
+      },
     },
   ),
 );
@@ -47,6 +67,8 @@ SimpleForm.propTypes = {
 
   /** handle the form state */
   setDoc: PropTypes.func.isRequired,
+
+  children: PropTypes.array.isRequired,
 };
 
 export default EnhancedSimpleForm;
