@@ -7,15 +7,11 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <pure(withStateHandlers(SimpleForm))
     onSubmit={[Function]}
 >
-    <TextField
+    <Unknown
         fieldName="test"
-        required={false}
-        select={false}
     />
-    <TextField
+    <Unknown
         fieldName="test2"
-        required={false}
-        select={false}
     />
 </pure(withStateHandlers(SimpleForm))>,
   Symbol(enzyme.__renderer__): Object {
@@ -32,18 +28,30 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         Array [
-          <TextField
+          <Unknown
+            doc={
+                        Object {
+                                    "test": "Type Sample",
+                                    "test2": "Type Sample",
+                                  }
+            }
+            fieldName="test"
             label="test"
             onChange={[Function]}
-            required={false}
-            select={false}
+            setDoc={[Function]}
             value="Type Sample"
 />,
-          <TextField
+          <Unknown
+            doc={
+                        Object {
+                                    "test": "Type Sample",
+                                    "test2": "Type Sample",
+                                  }
+            }
+            fieldName="test2"
             label="test2"
             onChange={[Function]}
-            required={false}
-            select={false}
+            setDoc={[Function]}
             value="Type Sample"
 />,
         ],
@@ -62,10 +70,14 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "children": null,
+          "doc": Object {
+            "test": "Type Sample",
+            "test2": "Type Sample",
+          },
+          "fieldName": "test",
           "label": "test",
           "onChange": [Function],
-          "required": false,
-          "select": false,
+          "setDoc": [Function],
           "value": "Type Sample",
         },
         "ref": null,
@@ -78,10 +90,14 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "children": null,
+          "doc": Object {
+            "test": "Type Sample",
+            "test2": "Type Sample",
+          },
+          "fieldName": "test2",
           "label": "test2",
           "onChange": [Function],
-          "required": false,
-          "select": false,
+          "setDoc": [Function],
           "value": "Type Sample",
         },
         "ref": null,
@@ -111,18 +127,30 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           Array [
-            <TextField
+            <Unknown
+              doc={
+                            Object {
+                                          "test": "Type Sample",
+                                          "test2": "Type Sample",
+                                        }
+              }
+              fieldName="test"
               label="test"
               onChange={[Function]}
-              required={false}
-              select={false}
+              setDoc={[Function]}
               value="Type Sample"
 />,
-            <TextField
+            <Unknown
+              doc={
+                            Object {
+                                          "test": "Type Sample",
+                                          "test2": "Type Sample",
+                                        }
+              }
+              fieldName="test2"
               label="test2"
               onChange={[Function]}
-              required={false}
-              select={false}
+              setDoc={[Function]}
               value="Type Sample"
 />,
           ],
@@ -141,10 +169,14 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": null,
+            "doc": Object {
+              "test": "Type Sample",
+              "test2": "Type Sample",
+            },
+            "fieldName": "test",
             "label": "test",
             "onChange": [Function],
-            "required": false,
-            "select": false,
+            "setDoc": [Function],
             "value": "Type Sample",
           },
           "ref": null,
@@ -157,10 +189,14 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": null,
+            "doc": Object {
+              "test": "Type Sample",
+              "test2": "Type Sample",
+            },
+            "fieldName": "test2",
             "label": "test2",
             "onChange": [Function],
-            "required": false,
-            "select": false,
+            "setDoc": [Function],
             "value": "Type Sample",
           },
           "ref": null,
@@ -200,10 +236,8 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <pure(withStateHandlers(SimpleForm))
     onSubmit={[Function]}
 >
-    <TextField
+    <Unknown
         fieldName="test"
-        required={false}
-        select={false}
     />
 </pure(withStateHandlers(SimpleForm))>,
   Symbol(enzyme.__renderer__): Object {
@@ -220,11 +254,16 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         Array [
-          <TextField
+          <Unknown
+            doc={
+                        Object {
+                                    "test": "Type Sample",
+                                  }
+            }
+            fieldName="test"
             label="test"
             onChange={[Function]}
-            required={false}
-            select={false}
+            setDoc={[Function]}
             value="Type Sample"
 />,
         ],
@@ -243,10 +282,13 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "children": null,
+          "doc": Object {
+            "test": "Type Sample",
+          },
+          "fieldName": "test",
           "label": "test",
           "onChange": [Function],
-          "required": false,
-          "select": false,
+          "setDoc": [Function],
           "value": "Type Sample",
         },
         "ref": null,
@@ -276,11 +318,16 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           Array [
-            <TextField
+            <Unknown
+              doc={
+                            Object {
+                                          "test": "Type Sample",
+                                        }
+              }
+              fieldName="test"
               label="test"
               onChange={[Function]}
-              required={false}
-              select={false}
+              setDoc={[Function]}
               value="Type Sample"
 />,
           ],
@@ -299,10 +346,13 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": null,
+            "doc": Object {
+              "test": "Type Sample",
+            },
+            "fieldName": "test",
             "label": "test",
             "onChange": [Function],
-            "required": false,
-            "select": false,
+            "setDoc": [Function],
             "value": "Type Sample",
           },
           "ref": null,

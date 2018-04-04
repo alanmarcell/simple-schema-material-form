@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { omit, pathOr, merge } from 'ramda';
 import { compose, withStateHandlers, pure } from 'recompact';
-// import TextField from '../TextInput';
-import { Button } from 'material-ui';
+import { Button, TextField } from 'material-ui';
 
 const getChildProps = ({ doc, setDoc }) => Child => {
-  const cProps = omit(['fieldName'], Child.props);
   const { fieldName } = Child.props;
   const value = pathOr('', [fieldName], doc);
 
   const childProps = {
-    ...cProps,
+    ...Child.props,
+    setDoc,
+    doc,
     onChange: e => setDoc({ [fieldName]: e.target.value }),
     value,
     label: fieldName,
@@ -22,6 +22,20 @@ const getChildProps = ({ doc, setDoc }) => Child => {
     childProps,
     null,
   );
+};
+
+export const TextInput = props => {
+  const { doc, setDoc, fieldName } = props;
+  const value = pathOr('', [fieldName], doc);
+  const cProps = omit(['fieldName', 'setDoc', 'doc'], props);
+
+  const inputProps = {
+    ...cProps,
+    onChange: e => setDoc({ [fieldName]: e.target.value }),
+    value,
+    label: fieldName,
+  };
+  return <TextField {...inputProps} />;
 };
 
 /** Our Simple Form Test Utility */

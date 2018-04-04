@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import { TextField, Button } from 'material-ui';
-import SimpleForm from './SimpleForm';
+import { Button } from 'material-ui';
+import SimpleForm, { TextInput } from './SimpleForm';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<SimpleForm ><TextField fieldName="test" /></SimpleForm>, div);
+  ReactDOM.render(<SimpleForm ><TextInput fieldName="test" /></SimpleForm>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -15,13 +15,13 @@ it('shallow a TextInput', () => {
   const onSubmit = jest.fn();
   const SimpleFormComponent = (
     <SimpleForm onSubmit={doc => onSubmit(doc)}>
-      <TextField fieldName="test" />
+      <TextInput fieldName="test" />
     </SimpleForm>);
 
   const component = shallow(SimpleFormComponent);
 
   const newValue = 'Type Sample';
-  const initialInput = component.find('TextField');
+  const initialInput = component.find({ label: 'test' });
   // const initialFormState = component.state();
   // const { test } = initialFormState.childProps.doc;
 
@@ -34,7 +34,7 @@ it('shallow a TextInput', () => {
   const newState = component.state();
   const { doc } = newState.childProps;
 
-  const newInput = component.find('TextField');
+  const newInput = component.find({ label: 'test' });
   const test2 = newState.childProps.doc.test;
 
   expect(test2).toBe(newValue);
@@ -54,8 +54,8 @@ it('shallow a 2 TextInput', () => {
   const onSubmit = jest.fn();
   const SimpleFormComponent = (
     <SimpleForm onSubmit={doc => onSubmit(doc)}>
-      <TextField fieldName="test" />
-      <TextField fieldName="test2" />
+      <TextInput fieldName="test" />
+      <TextInput fieldName="test2" />
     </SimpleForm>);
 
   const component = shallow(SimpleFormComponent);
@@ -84,6 +84,13 @@ it('shallow a 2 TextInput', () => {
   button.simulate('click');
 
   const test2 = newState.childProps.doc.test;
+
+  const expectedDoc = {
+    test: newValue,
+    test2: newValue,
+  };
+
+  expect(doc).toEqual(expectedDoc);
 
   expect(test2).toBe(newValue);
   expect(newInput.props().value).toBe(newValue);
