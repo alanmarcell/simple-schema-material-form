@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { omit, pathOr, merge } from 'ramda';
 import { compose, withStateHandlers, pure } from 'recompact';
 import { Button, TextField } from 'material-ui';
+import TextInput from './TextInput';
 
 const getChildProps = ({ doc, setDoc }) => Child => {
   const { fieldName } = Child.props;
@@ -22,20 +23,6 @@ const getChildProps = ({ doc, setDoc }) => Child => {
     childProps,
     null,
   );
-};
-
-export const TextInput = props => {
-  const { doc, setDoc, fieldName } = props;
-  const value = pathOr('', [fieldName], doc);
-  const cProps = omit(['fieldName', 'setDoc', 'doc'], props);
-
-  const inputProps = {
-    ...cProps,
-    onChange: e => setDoc({ [fieldName]: e.target.value }),
-    value,
-    label: fieldName,
-  };
-  return <TextField {...inputProps} />;
 };
 
 /** Our Simple Form Test Utility */

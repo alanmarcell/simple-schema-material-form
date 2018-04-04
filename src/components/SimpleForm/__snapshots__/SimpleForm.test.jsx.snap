@@ -7,10 +7,10 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <pure(withStateHandlers(SimpleForm))
     onSubmit={[Function]}
 >
-    <Unknown
+    <TextInput
         fieldName="test"
     />
-    <Unknown
+    <TextInput
         fieldName="test2"
     />
 </pure(withStateHandlers(SimpleForm))>,
@@ -28,7 +28,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         Array [
-          <Unknown
+          <TextInput
             doc={
                         Object {
                                     "test": "Type Sample",
@@ -41,7 +41,7 @@ ShallowWrapper {
             setDoc={[Function]}
             value="Type Sample"
 />,
-          <Unknown
+          <TextInput
             doc={
                         Object {
                                     "test": "Type Sample",
@@ -127,7 +127,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           Array [
-            <Unknown
+            <TextInput
               doc={
                             Object {
                                           "test": "Type Sample",
@@ -140,7 +140,7 @@ ShallowWrapper {
               setDoc={[Function]}
               value="Type Sample"
 />,
-            <Unknown
+            <TextInput
               doc={
                             Object {
                                           "test": "Type Sample",
@@ -236,7 +236,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <pure(withStateHandlers(SimpleForm))
     onSubmit={[Function]}
 >
-    <Unknown
+    <TextInput
         fieldName="test"
     />
 </pure(withStateHandlers(SimpleForm))>,
@@ -254,7 +254,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         Array [
-          <Unknown
+          <TextInput
             doc={
                         Object {
                                     "test": "Type Sample",
@@ -318,7 +318,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           Array [
-            <Unknown
+            <TextInput
               doc={
                             Object {
                                           "test": "Type Sample",

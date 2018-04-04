@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import { Button } from 'material-ui';
-import SimpleForm, { TextInput } from './SimpleForm';
+import SimpleForm from './SimpleForm';
+import TextInput from './TextInput';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import SimpleForm, { TextInput } from '../components/Form/SimpleForm';
+import SimpleForm from '../components/SimpleForm/SimpleForm';
+import TextInput from '../components/SimpleForm/TextInput';
 
 storiesOf('SimpleForm', module)
   .add('with TextInput', () => (
