@@ -6,18 +6,18 @@ exports[`Storyshots Form with 2 TextInput 1`] = `
     class="MuiFormControl-root-1"
   >
     <label
-      class="MuiFormLabel-root-10 MuiInputLabel-root-5 MuiInputLabel-formControl-6 MuiInputLabel-animated-9"
+      class="MuiFormLabel-root-5 MuiInputLabel-root-72 MuiInputLabel-formControl-73 MuiInputLabel-animated-76"
       data-shrink="false"
     >
       test
     </label>
     <div
-      class="MuiInput-root-16 MuiInput-formControl-17 MuiInput-underline-20"
+      class="MuiInput-root-77 MuiInput-formControl-78 MuiInput-underline-81"
     >
       <input
         aria-invalid="false"
         aria-required="false"
-        class="MuiInput-input-24"
+        class="MuiInput-input-85"
         type="text"
         value=""
       />
@@ -27,35 +27,35 @@ exports[`Storyshots Form with 2 TextInput 1`] = `
     class="MuiFormControl-root-1"
   >
     <label
-      class="MuiFormLabel-root-10 MuiInputLabel-root-5 MuiInputLabel-formControl-6 MuiInputLabel-animated-9"
+      class="MuiFormLabel-root-5 MuiInputLabel-root-72 MuiInputLabel-formControl-73 MuiInputLabel-animated-76"
       data-shrink="false"
     >
       test2
     </label>
     <div
-      class="MuiInput-root-16 MuiInput-formControl-17 MuiInput-underline-20"
+      class="MuiInput-root-77 MuiInput-formControl-78 MuiInput-underline-81"
     >
       <input
         aria-invalid="false"
         aria-required="false"
-        class="MuiInput-input-24"
+        class="MuiInput-input-85"
         type="text"
         value=""
       />
     </div>
   </div>
   <button
-    class="MuiButtonBase-root-45 MuiButton-root-30"
+    class="MuiButtonBase-root-32 MuiButton-root-91"
     tabindex="0"
     type="button"
   >
     <span
-      class="MuiButton-label-31"
+      class="MuiButton-label-92"
     >
       Submit
     </span>
     <span
-      class="MuiTouchRipple-root-48"
+      class="MuiTouchRipple-root-41"
     />
   </button>
 </form>
@@ -67,25 +67,25 @@ exports[`Storyshots Form with Checkbox 1`] = `
     class="MuiFormControl-root-1"
   >
     <label
-      class="MuiFormLabel-root-10"
+      class="MuiFormLabel-root-5"
     >
       test
     </label>
     <div
-      class="MuiFormGroup-root-55 MuiFormGroup-row-56"
+      class="MuiFormGroup-root-11 MuiFormGroup-row-12"
     >
       <label
-        class="MuiFormControlLabel-root-57"
+        class="MuiFormControlLabel-root-13"
       >
         <span
-          class="MuiButtonBase-root-45 MuiIconButton-root-70 MuiSwitchBase-root-65 MuiSwitchBase-default-67 MuiCheckbox-default-60"
+          class="MuiButtonBase-root-32 MuiIconButton-root-26 MuiSwitchBase-root-21 MuiSwitchBase-default-23 MuiCheckbox-default-16"
         >
           <span
-            class="MuiIconButton-label-75"
+            class="MuiIconButton-label-31"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root-76"
+              class="MuiSvgIcon-root-35"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -94,34 +94,34 @@ exports[`Storyshots Form with Checkbox 1`] = `
               />
             </svg>
             <input
-              class="MuiSwitchBase-input-66"
+              class="MuiSwitchBase-input-22"
               id="um"
               type="checkbox"
               value="um"
             />
           </span>
           <span
-            class="MuiTouchRipple-root-48"
+            class="MuiTouchRipple-root-41"
           />
         </span>
         <span
-          class="MuiTypography-root-82 MuiTypography-body1-91 MuiFormControlLabel-label-59"
+          class="MuiTypography-root-48 MuiTypography-body1-57 MuiFormControlLabel-label-15"
         >
           1
         </span>
       </label>
       <label
-        class="MuiFormControlLabel-root-57"
+        class="MuiFormControlLabel-root-13"
       >
         <span
-          class="MuiButtonBase-root-45 MuiIconButton-root-70 MuiSwitchBase-root-65 MuiSwitchBase-default-67 MuiCheckbox-default-60"
+          class="MuiButtonBase-root-32 MuiIconButton-root-26 MuiSwitchBase-root-21 MuiSwitchBase-default-23 MuiCheckbox-default-16"
         >
           <span
-            class="MuiIconButton-label-75"
+            class="MuiIconButton-label-31"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root-76"
+              class="MuiSvgIcon-root-35"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -130,18 +130,18 @@ exports[`Storyshots Form with Checkbox 1`] = `
               />
             </svg>
             <input
-              class="MuiSwitchBase-input-66"
+              class="MuiSwitchBase-input-22"
               id="dois"
               type="checkbox"
               value="dois"
             />
           </span>
           <span
-            class="MuiTouchRipple-root-48"
+            class="MuiTouchRipple-root-41"
           />
         </span>
         <span
-          class="MuiTypography-root-82 MuiTypography-body1-91 MuiFormControlLabel-label-59"
+          class="MuiTypography-root-48 MuiTypography-body1-57 MuiFormControlLabel-label-15"
         >
           2
         </span>
@@ -149,17 +149,17 @@ exports[`Storyshots Form with Checkbox 1`] = `
     </div>
   </div>
   <button
-    class="MuiButtonBase-root-45 MuiButton-root-30"
+    class="MuiButtonBase-root-32 MuiButton-root-91"
     tabindex="0"
     type="button"
   >
     <span
-      class="MuiButton-label-31"
+      class="MuiButton-label-92"
     >
       Submit
     </span>
     <span
-      class="MuiTouchRipple-root-48"
+      class="MuiTouchRipple-root-41"
     />
   </button>
 </form>
@@ -171,25 +171,25 @@ exports[`Storyshots Form with Checkbox and Text Iput 1`] = `
     class="MuiFormControl-root-1"
   >
     <label
-      class="MuiFormLabel-root-10"
+      class="MuiFormLabel-root-5"
     >
       test
     </label>
     <div
-      class="MuiFormGroup-root-55 MuiFormGroup-row-56"
+      class="MuiFormGroup-root-11 MuiFormGroup-row-12"
     >
       <label
-        class="MuiFormControlLabel-root-57"
+        class="MuiFormControlLabel-root-13"
       >
         <span
-          class="MuiButtonBase-root-45 MuiIconButton-root-70 MuiSwitchBase-root-65 MuiSwitchBase-default-67 MuiCheckbox-default-60"
+          class="MuiButtonBase-root-32 MuiIconButton-root-26 MuiSwitchBase-root-21 MuiSwitchBase-default-23 MuiCheckbox-default-16"
         >
           <span
-            class="MuiIconButton-label-75"
+            class="MuiIconButton-label-31"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root-76"
+              class="MuiSvgIcon-root-35"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -198,34 +198,34 @@ exports[`Storyshots Form with Checkbox and Text Iput 1`] = `
               />
             </svg>
             <input
-              class="MuiSwitchBase-input-66"
+              class="MuiSwitchBase-input-22"
               id="um"
               type="checkbox"
               value="um"
             />
           </span>
           <span
-            class="MuiTouchRipple-root-48"
+            class="MuiTouchRipple-root-41"
           />
         </span>
         <span
-          class="MuiTypography-root-82 MuiTypography-body1-91 MuiFormControlLabel-label-59"
+          class="MuiTypography-root-48 MuiTypography-body1-57 MuiFormControlLabel-label-15"
         >
           1
         </span>
       </label>
       <label
-        class="MuiFormControlLabel-root-57"
+        class="MuiFormControlLabel-root-13"
       >
         <span
-          class="MuiButtonBase-root-45 MuiIconButton-root-70 MuiSwitchBase-root-65 MuiSwitchBase-default-67 MuiCheckbox-default-60"
+          class="MuiButtonBase-root-32 MuiIconButton-root-26 MuiSwitchBase-root-21 MuiSwitchBase-default-23 MuiCheckbox-default-16"
         >
           <span
-            class="MuiIconButton-label-75"
+            class="MuiIconButton-label-31"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root-76"
+              class="MuiSvgIcon-root-35"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -234,18 +234,18 @@ exports[`Storyshots Form with Checkbox and Text Iput 1`] = `
               />
             </svg>
             <input
-              class="MuiSwitchBase-input-66"
+              class="MuiSwitchBase-input-22"
               id="dois"
               type="checkbox"
               value="dois"
             />
           </span>
           <span
-            class="MuiTouchRipple-root-48"
+            class="MuiTouchRipple-root-41"
           />
         </span>
         <span
-          class="MuiTypography-root-82 MuiTypography-body1-91 MuiFormControlLabel-label-59"
+          class="MuiTypography-root-48 MuiTypography-body1-57 MuiFormControlLabel-label-15"
         >
           2
         </span>
@@ -256,35 +256,35 @@ exports[`Storyshots Form with Checkbox and Text Iput 1`] = `
     class="MuiFormControl-root-1"
   >
     <label
-      class="MuiFormLabel-root-10 MuiInputLabel-root-5 MuiInputLabel-formControl-6 MuiInputLabel-animated-9"
+      class="MuiFormLabel-root-5 MuiInputLabel-root-72 MuiInputLabel-formControl-73 MuiInputLabel-animated-76"
       data-shrink="false"
     >
       test2
     </label>
     <div
-      class="MuiInput-root-16 MuiInput-formControl-17 MuiInput-underline-20"
+      class="MuiInput-root-77 MuiInput-formControl-78 MuiInput-underline-81"
     >
       <input
         aria-invalid="false"
         aria-required="false"
-        class="MuiInput-input-24"
+        class="MuiInput-input-85"
         type="text"
         value=""
       />
     </div>
   </div>
   <button
-    class="MuiButtonBase-root-45 MuiButton-root-30"
+    class="MuiButtonBase-root-32 MuiButton-root-91"
     tabindex="0"
     type="button"
   >
     <span
-      class="MuiButton-label-31"
+      class="MuiButton-label-92"
     >
       Submit
     </span>
     <span
-      class="MuiTouchRipple-root-48"
+      class="MuiTouchRipple-root-41"
     />
   </button>
 </form>
@@ -296,35 +296,35 @@ exports[`Storyshots Form with TextInput 1`] = `
     class="MuiFormControl-root-1"
   >
     <label
-      class="MuiFormLabel-root-10 MuiInputLabel-root-5 MuiInputLabel-formControl-6 MuiInputLabel-animated-9"
+      class="MuiFormLabel-root-5 MuiInputLabel-root-72 MuiInputLabel-formControl-73 MuiInputLabel-animated-76"
       data-shrink="false"
     >
       test
     </label>
     <div
-      class="MuiInput-root-16 MuiInput-formControl-17 MuiInput-underline-20"
+      class="MuiInput-root-77 MuiInput-formControl-78 MuiInput-underline-81"
     >
       <input
         aria-invalid="false"
         aria-required="false"
-        class="MuiInput-input-24"
+        class="MuiInput-input-85"
         type="text"
         value=""
       />
     </div>
   </div>
   <button
-    class="MuiButtonBase-root-45 MuiButton-root-30"
+    class="MuiButtonBase-root-32 MuiButton-root-91"
     tabindex="0"
     type="button"
   >
     <span
-      class="MuiButton-label-31"
+      class="MuiButton-label-92"
     >
       Submit
     </span>
     <span
-      class="MuiTouchRipple-root-48"
+      class="MuiTouchRipple-root-41"
     />
   </button>
 </form>
