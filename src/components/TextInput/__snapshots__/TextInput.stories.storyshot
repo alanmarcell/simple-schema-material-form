@@ -24,6 +24,30 @@ exports[`Storyshots Fields/TextInput simple 1`] = `
 </div>
 `;
 
+exports[`Storyshots Fields|TextInput simple 1`] = `
+<div
+  class="MuiFormControl-root-1"
+>
+  <label
+    class="MuiFormLabel-root-5 MuiInputLabel-root-72 MuiInputLabel-formControl-73 MuiInputLabel-animated-76"
+    data-shrink="false"
+  >
+    World
+  </label>
+  <div
+    class="MuiInput-root-77 MuiInput-formControl-78 MuiInput-underline-81"
+  >
+    <input
+      aria-invalid="false"
+      aria-required="false"
+      class="MuiInput-input-85"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots TextInput simple 1`] = `
 <div
   class="MuiFormControl-root-1"

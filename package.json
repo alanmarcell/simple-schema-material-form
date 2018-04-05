@@ -59,6 +59,7 @@
     "@storybook/addon-console": "^1.0.0",
     "@storybook/addon-jest": "^3.4.0",
     "@storybook/addon-links": "^3.4.0",
+    "@storybook/addon-options": "^3.4.0",
     "@storybook/addon-storyshots": "^3.4.0",
     "@storybook/addon-viewport": "^3.4.0",
     "@storybook/addons": "^3.4.0",

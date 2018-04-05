@@ -6,7 +6,7 @@ import TextInput from '../TextInput';
 import Checkbox from '../Checkbox';
 import withTests from '../../stories/withTests';
 
-storiesOf('Form', module)
+storiesOf('Form|TextInput', module)
   .addDecorator(withTests('Form'))
   .add('with TextInput', () => (
     <Form onSubmit={action('doc')} >
@@ -18,7 +18,11 @@ storiesOf('Form', module)
       <TextInput fieldName="test" />
       <TextInput fieldName="test2" />
     </Form>
-  ))
+  ));
+
+
+storiesOf('Form|Checkbox', module)
+  .addDecorator(withTests('Form'))
   .add('with Checkbox', () => (
     <Form onSubmit={action('doc')} >
       <Checkbox selectOptions={[{ label: 1, key: 'um' }, { label: 2, key: 'dois' }]} fieldName="test" />
@@ -30,4 +34,3 @@ storiesOf('Form', module)
       <TextInput fieldName="test2" />
     </Form>
   ));
-
