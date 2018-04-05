@@ -1,8 +1,6 @@
 import React from 'react';
 import { merge } from 'ramda';
-
 import MaterialCheckbox from 'material-ui/Checkbox';
-import { pure, compose } from 'recompose';
 import { FormControl, FormLabel, FormControlLabel, FormGroup } from 'material-ui/Form';
 
 const Checkbox = props => {

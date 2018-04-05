@@ -21,26 +21,26 @@ describe('Test within Form', () => {
       </SimpleForm>);
 
     const component = shallow(SimpleFormComponent);
-
     const newValue = 'Type Sample';
-    const initialInput = component.find({ label: 'test' });
-    // const initialFormState = component.state();
-    // const { test } = initialFormState.childProps.doc;
 
-    // expect(test).toBe('');
+    const { children } = component.props();
 
-    initialInput.simulate('change', {
+    const Children = shallow(children[0][0]);
+
+    Children.simulate('change', {
       target: { value: newValue },
     });
 
+    component.update();
     const newState = component.state();
-    const { doc } = newState.childProps;
+    const newChildren = component.props().children[0][0];
+    const NewChildren = shallow(newChildren);
 
-    const newInput = component.find({ label: 'test' });
+    const { doc } = newState.childProps;
     const test2 = newState.childProps.doc.test;
 
     expect(test2).toBe(newValue);
-    expect(newInput.props().value).toBe(newValue);
+    expect(NewChildren.props().value).toBe(newValue);
     expect(component).toMatchSnapshot();
 
 
@@ -63,24 +63,24 @@ describe('Test within Form', () => {
     const component = shallow(SimpleFormComponent);
 
     const newValue = 'Type Sample';
-    const initialInput = component.find({ label: 'test' });
-    const initialInput2 = component.find({ label: 'test2' });
-    // const initialFormState = component.state();
-    // const { test } = initialFormState.childProps.doc;
+    const { children } = component.props();
+    const TextInput1 = shallow(children[0][0]);
+    const TextInput2 = shallow(children[0][1]);
 
-    // expect(test).toBe('');
-
-    initialInput.simulate('change', {
+    TextInput1.simulate('change', {
       target: { value: newValue },
     });
-    initialInput2.simulate('change', {
+    TextInput2.simulate('change', {
       target: { value: newValue },
     });
     const newState = component.state();
     const { doc } = newState.childProps;
 
-    const newInput = component.find({ label: 'test' });
-    const newInput2 = component.find({ label: 'test2' });
+    component.update();
+
+    const newChildren = component.props().children;
+    const NewTextInput1 = shallow(newChildren[0][0]);
+    const NewTextInput2 = shallow(newChildren[0][1]);
 
     const button = component.find(Button);
     button.simulate('click');
@@ -95,8 +95,8 @@ describe('Test within Form', () => {
     expect(doc).toEqual(expectedDoc);
 
     expect(test2).toBe(newValue);
-    expect(newInput.props().value).toBe(newValue);
-    expect(newInput2.props().value).toBe(newValue);
+    expect(NewTextInput1.props().value).toBe(newValue);
+    expect(NewTextInput2.props().value).toBe(newValue);
     expect(component).toMatchSnapshot();
     expect(onSubmit).toHaveBeenCalled();
     expect(onSubmit).toBeCalledWith(doc);

@@ -12,7 +12,7 @@ const getChildProps = ({ doc, setDoc }) => Child => {
     ...Child.props,
     setDoc,
     doc,
-    onChange: e => setDoc({ [fieldName]: e.target.value }),
+    // onChange: e => setDoc({ [fieldName]: e.target.value }),
     value,
     label: fieldName,
   };

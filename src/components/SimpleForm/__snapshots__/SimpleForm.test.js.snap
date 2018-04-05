@@ -12,7 +12,6 @@ exports[`Test within Form shallow a 2 TextInput 1`] = `
     fieldName="test"
     key=".0"
     label="test"
-    onChange={[Function]}
     setDoc={[Function]}
     value="Type Sample"
   />
@@ -26,7 +25,6 @@ exports[`Test within Form shallow a 2 TextInput 1`] = `
     fieldName="test2"
     key=".1"
     label="test2"
-    onChange={[Function]}
     setDoc={[Function]}
     value="Type Sample"
   />
@@ -49,7 +47,6 @@ exports[`Test within Form shallow a TextInput 1`] = `
     fieldName="test"
     key=".0"
     label="test"
-    onChange={[Function]}
     setDoc={[Function]}
     value="Type Sample"
   />

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow a Checkbox 1`] = `
+<WithStyles(FormControl)>
+  <WithStyles(FormLabel) />
+  <WithStyles(FormGroup)
+    row={true}
+  >
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          id="um"
+          onChange={[Function]}
+          value="um"
+        />
+      }
+      key="um"
+      label={1}
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          id="dois"
+          onChange={[Function]}
+          value="dois"
+        />
+      }
+      key="dois"
+      label={2}
+    />
+  </WithStyles(FormGroup)>
+</WithStyles(FormControl)>
+`;
