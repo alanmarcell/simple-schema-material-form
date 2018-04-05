@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { omit, pathOr, merge } from 'ramda';
+import { pathOr, merge } from 'ramda';
 import { compose, withStateHandlers, pure } from 'recompact';
-import { Button, TextField } from 'material-ui';
-import TextInput from './TextInput';
+import { Button } from 'material-ui';
 
 const getChildProps = ({ doc, setDoc }) => Child => {
   const { fieldName } = Child.props;
