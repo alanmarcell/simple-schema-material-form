@@ -54,6 +54,7 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
+    "@sambego/storybook-state": "^1.0.7",
     "@storybook/addon-actions": "^3.4.0",
     "@storybook/addon-centered": "^3.4.0",
     "@storybook/addon-console": "^1.0.0",

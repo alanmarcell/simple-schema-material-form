@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Fields|Radio simple 1`] = `
+<div>
+  <div
+    class="MuiFormControl-root-1"
+  >
+    <label
+      class="MuiFormLabel-root-5"
+    >
+      test
+    </label>
+    <div
+      aria-label="test"
+      class="MuiFormGroup-root-11 MuiFormGroup-row-12"
+      role="radiogroup"
+    >
+      <label
+        class="MuiFormControlLabel-root-13"
+      >
+        <span
+          class="MuiButtonBase-root-32 MuiIconButton-root-26 MuiSwitchBase-root-21 MuiSwitchBase-default-23 MuiRadio-default-106"
+        >
+          <span
+            class="MuiIconButton-label-31"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root-35"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+              />
+            </svg>
+            <input
+              class="MuiSwitchBase-input-22"
+              name="test"
+              type="radio"
+              value="um"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root-41"
+          />
+        </span>
+        <span
+          class="MuiTypography-root-48 MuiTypography-body1-57 MuiFormControlLabel-label-15"
+        >
+          1
+        </span>
+      </label>
+      <label
+        class="MuiFormControlLabel-root-13"
+      >
+        <span
+          class="MuiButtonBase-root-32 MuiIconButton-root-26 MuiSwitchBase-root-21 MuiSwitchBase-default-23 MuiRadio-default-106"
+        >
+          <span
+            class="MuiIconButton-label-31"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root-35"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+              />
+            </svg>
+            <input
+              class="MuiSwitchBase-input-22"
+              name="test"
+              type="radio"
+              value="dois"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root-41"
+          />
+        </span>
+        <span
+          class="MuiTypography-root-48 MuiTypography-body1-57 MuiFormControlLabel-label-15"
+        >
+          2
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+`;
