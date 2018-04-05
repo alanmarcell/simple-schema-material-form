@@ -68,7 +68,8 @@ SimpleForm.propTypes = {
   /** handle the form state */
   setDoc: PropTypes.func.isRequired,
 
-  children: PropTypes.array.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
+export { SimpleForm };
 export default EnhancedSimpleForm;
