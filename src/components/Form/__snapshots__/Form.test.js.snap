@@ -1,19 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders with a TextInput 1`] = `
-<Form
-  doc={Object {}}
-  name="World"
-  setDoc={[Function]}
->
-  <pure(TextInput) />
-</Form>
+exports[`Test within Form shallow a 2 TextInput 1`] = `
+<form>
+  <pure(TextInput)
+    doc={
+      Object {
+        "test": "Type Sample",
+        "test2": "Type Sample",
+      }
+    }
+    fieldName="test"
+    key=".0"
+    label="test"
+    setDoc={[Function]}
+    value="Type Sample"
+  />
+  <pure(TextInput)
+    doc={
+      Object {
+        "test": "Type Sample",
+        "test2": "Type Sample",
+      }
+    }
+    fieldName="test2"
+    key=".1"
+    label="test2"
+    setDoc={[Function]}
+    value="Type Sample"
+  />
+  <WithStyles(Button)
+    onClick={[Function]}
+  >
+    Submit
+  </WithStyles(Button)>
+</form>
 `;
 
-exports[`renders without crashing 1`] = `
-<Form
-  doc={Object {}}
-  name="World"
-  setDoc={[Function]}
-/>
+exports[`Test within Form shallow a TextInput 1`] = `
+<form>
+  <pure(TextInput)
+    doc={
+      Object {
+        "test": "Type Sample",
+      }
+    }
+    fieldName="test"
+    key=".0"
+    label="test"
+    setDoc={[Function]}
+    value="Type Sample"
+  />
+  <WithStyles(Button)
+    onClick={[Function]}
+  >
+    Submit
+  </WithStyles(Button)>
+</form>
 `;

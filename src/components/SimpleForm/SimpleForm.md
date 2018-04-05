@@ -1,5 +1,0 @@
-# SimpleForm example
-
-```jsx
-<SimpleForm />
-```
