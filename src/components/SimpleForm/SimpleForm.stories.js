@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import SimpleForm from './SimpleForm';
-import TextInput from './TextInput';
+import TextInput from '../TextInput';
 import Checkbox from './Checkbox';
 import withTests from '../../stories/withTests';
 

@@ -1,9 +1,9 @@
 import { compose, withState } from 'recompose';
 
-import TextInput from './TextInput';
+import TextInputComponent from './TextInput';
 
 const enhance = compose(withState('value', 'setvalue', ({ value }) => value));
 
-export { TextInput, enhance };
+export { TextInputComponent, enhance };
 
-export default enhance(TextInput);
+export default TextInputComponent;

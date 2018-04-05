@@ -1,15 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `
-<div>
-  <TextField
-    label=""
-    onChange={[Function]}
-    required={false}
-    select={false}
-    type="text"
-    value=""
-  />
-  <p />
-</div>
+exports[`shallow a TextInput 1`] = `
+<TextField
+  label="test"
+  onChange={[Function]}
+  required={false}
+  select={false}
+  value=""
+/>
 `;

@@ -1,39 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { pathOr } from 'ramda';
+import { compose, pure, setDisplayName, mapProps } from 'recompact';
 import { TextField } from 'material-ui';
-import { withStateHandlers, compose } from 'recompact';
 
-/**
- * Component is described here.
- *
- */
-const TextInput = ({ value, onChange }) => (
-  <div>
-    <TextField type="text" label={value} value={value} onChange={onChange} />
-    <p>
-      {value}
-    </p>
-  </div>
+const TextInput = props => {
+  return <TextField {...props} />;
+};
+
+const enhance = compose(
+  pure,
+  setDisplayName('TextInput'),
+  mapProps(({
+    fieldName, doc, setDoc, ...props
+  }) => ({
+    label: fieldName,
+    value: pathOr('', [fieldName], doc),
+    onChange: e => setDoc({ [fieldName]: e.target.value }),
+    ...props,
+  })),
 );
-
-const enhance = compose(withStateHandlers(
-  { value: '' },
-  {
-    onChange: () => e => ({
-      value: e.target.value,
-    }),
-  },
-));
 
 const EnhancedTextInput = enhance(TextInput);
 
-
 TextInput.defaultProps = {
-  value: 'Initial',
+  value: '',
 };
 
 TextInput.propTypes = {
   value: PropTypes.string,
+  doc: PropTypes.object.isRequired,
+  setDoc: PropTypes.func.isRequired,
 };
 
 export default EnhancedTextInput;

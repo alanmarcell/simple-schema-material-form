@@ -6,7 +6,7 @@ exports[`renders with a TextInput 1`] = `
   name="World"
   setDoc={[Function]}
 >
-  <withState(withStateHandlers(TextInput)) />
+  <pure(TextInput) />
 </Form>
 `;
 
