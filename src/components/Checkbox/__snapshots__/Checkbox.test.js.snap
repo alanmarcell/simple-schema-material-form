@@ -1,18 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`shallow a Checkbox 1`] = `
-<WithStyles(FormControl)>
-  <WithStyles(FormLabel) />
+<SelectionControl>
   <WithStyles(FormGroup)
     row={true}
   >
     <WithStyles(FormControlLabel)
       control={
-        <WithStyles(Checkbox)
-          checked={undefined}
-          id="um"
-          onChange={[Function]}
-          value="um"
+        <Control
+          doc={Object {}}
+          fieldName="test"
+          i={
+            Object {
+              "key": "um",
+              "label": 1,
+            }
+          }
+          setDoc={[Function]}
         />
       }
       key="um"
@@ -20,16 +24,21 @@ exports[`shallow a Checkbox 1`] = `
     />
     <WithStyles(FormControlLabel)
       control={
-        <WithStyles(Checkbox)
-          checked={undefined}
-          id="dois"
-          onChange={[Function]}
-          value="dois"
+        <Control
+          doc={Object {}}
+          fieldName="test"
+          i={
+            Object {
+              "key": "dois",
+              "label": 2,
+            }
+          }
+          setDoc={[Function]}
         />
       }
       key="dois"
       label={2}
     />
   </WithStyles(FormGroup)>
-</WithStyles(FormControl)>
+</SelectionControl>
 `;

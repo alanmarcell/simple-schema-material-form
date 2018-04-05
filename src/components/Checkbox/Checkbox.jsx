@@ -1,7 +1,16 @@
 import React from 'react';
 import { merge } from 'ramda';
 import MaterialCheckbox from 'material-ui/Checkbox';
-import { FormControl, FormLabel, FormControlLabel, FormGroup } from 'material-ui/Form';
+import { FormControlLabel, FormGroup } from 'material-ui/Form';
+import SelectionControl from '../SelectionControl';
+
+const Control = ({
+  setDoc, doc, fieldName, i,
+}) => {
+  return (<MaterialCheckbox
+    onChange={(_event, val) => setDoc(merge(doc, { [fieldName]: { ...doc[fieldName], [i.key]: val } }))}
+  />);
+};
 
 const Checkbox = props => {
   const {
@@ -9,31 +18,23 @@ const Checkbox = props => {
   } = props;
 
   return (
-    <FormControl >
-      <FormLabel>{label}</FormLabel>
+    <SelectionControl
+      label={label}
+    >
       <FormGroup row>
         {selectOptions.map(i =>
           (<FormControlLabel
             key={i.key}
-            control={<MaterialCheckbox
-              checked={i.checked}
-              onChange={(_event, val) => setDoc(merge(doc, { [fieldName]: { ...doc[fieldName], [i.key]: val } }))}
-              value={i.key || ''}
-              id={i.key}
+            control={<Control {...{
+              i, doc, fieldName, setDoc,
+            }}
             />}
             label={i.label}
           />))
         }
       </FormGroup>
-    </FormControl >
+    </SelectionControl>
   );
 };
-
-// const Checkbox = props => {
-//   const inputProps = {
-//     ...props,
-//   };
-//   return <CheckboxField selectOptions={[{ label: 1, key: 'um' }, { label: 2, key: 'dois' }]} {...inputProps} />;
-// };
 
 export default Checkbox;
