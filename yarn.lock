@@ -44,6 +44,17 @@
   dependencies:
     global "^4.3.2"
 
+"@storybook/addon-jest@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-3.4.0.tgz#1042afe58413a62ed7699fba9e5e94972710eca5"
+  dependencies:
+    "@storybook/components" "3.4.0"
+    babel-runtime "^6.26.0"
+    glamor "^2.20.40"
+    glamorous "^4.12.1"
+    global "^4.3.2"
+    prop-types "^15.6.1"
+
 "@storybook/addon-links@3.4.0", "@storybook/addon-links@^3.4.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.0.tgz#638218a567b9318a72ab268963d7efcd47878164"

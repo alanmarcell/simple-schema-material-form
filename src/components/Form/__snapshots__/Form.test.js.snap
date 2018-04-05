@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders with a TextInput 1`] = `
+<Form
+  doc={Object {}}
+  name="World"
+  setDoc={[Function]}
+>
+  <withState(withStateHandlers(TextInput)) />
+</Form>
+`;
+
+exports[`renders without crashing 1`] = `
+<Form
+  doc={Object {}}
+  name="World"
+  setDoc={[Function]}
+/>
+`;
