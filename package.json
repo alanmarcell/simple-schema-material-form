@@ -32,6 +32,7 @@
     "react-dom": "^16.3.0",
     "react-router-dom": "^4.2.2",
     "recompact": "^3.3.0",
+    "simpl-schema": "^1.4.2",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",

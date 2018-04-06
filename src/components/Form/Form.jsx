@@ -1,10 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { pathOr, merge } from 'ramda';
-import { compose, withStateHandlers, pure } from 'recompact';
+import { pathOr, merge, isNil, isEmpty, filter } from 'ramda';
+import { compose, withStateHandlers, pure, withState } from 'recompact';
+import { FormControl } from 'material-ui/Form';
 import { Button } from 'material-ui';
+import handleSubmit from './submitHandler';
 
-const getChildProps = ({ doc, setDoc }) => Child => {
+const hasError = (errors = [], fieldName) => {
+  if (isNil(errors)) {
+    return false;
+  }
+
+  const getError = error => {
+    if (error.name === fieldName) {
+      return error;
+    }
+
+    return null;
+  };
+
+  const fieldError = filter(getError, errors);
+
+  if (isEmpty(fieldError)) {
+    return false;
+  }
+
+  return true;
+};
+
+const getChildProps = ({ doc, setDoc, errors }) => Child => {
   const { fieldName } = Child.props;
   const value = pathOr('', [fieldName], doc);
 
@@ -12,7 +36,7 @@ const getChildProps = ({ doc, setDoc }) => Child => {
     ...Child.props,
     setDoc,
     doc,
-    // onChange: e => setDoc({ [fieldName]: e.target.value }),
+    error: hasError(errors, fieldName),
     value,
     label: fieldName,
   };
@@ -26,19 +50,20 @@ const getChildProps = ({ doc, setDoc }) => Child => {
 
 /** Our Simple Form Test Utility */
 const SimpleForm = (props) => {
-  const { doc, setDoc, onSubmit } = props;
-  const setChildProps = getChildProps({ doc, setDoc });
+  const { doc, setDoc, errors } = props;
+  const setChildProps = getChildProps({ doc, setDoc, errors });
   return (
-    <form >
+    <FormControl >
       {React.Children.map(props.children, setChildProps)}
-      <Button onClick={() => onSubmit(doc)} >Submit</Button>
-    </form>
+      <Button onClick={() => handleSubmit(props)} >Submit</Button>
+    </FormControl>
   );
 };
 
 /** This is our base enhancer to handle doc changes */
 const enhance = compose(
   pure,
+  withState('errors', 'setErrors', []),
   withStateHandlers(
     /** this our initial doc */
     { doc: {} },

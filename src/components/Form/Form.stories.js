@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withState } from '@dump247/storybook-state';
 import { merge } from 'ramda';
+import Typography from 'material-ui/Typography';
+import SimpleSchema from 'simpl-schema';
 
 import { SimpleForm } from './Form';
 import TextInput from '../TextInput';
@@ -22,8 +24,26 @@ const Form = ({ store, children }) => (
   </SimpleForm>
 );
 
+const SessionSchema = new SimpleSchema({
+  required: {
+    type: String,
+    min: 6,
+  },
+});
+
 storiesOf('Form|TextInput', module)
   .addDecorator(withTests('Form'))
+  .add('with TextInput Schema Validator', withState({ doc: {} }, (store) => (
+    <div style={{ display: 'flex', alignItems: 'space-between', flexDirection: 'column' }}>
+      <Typography variant="title" gutterBottom>
+        If you hit submit without the required field a error is displayed
+      </Typography>
+      <Form store={store} schema={SessionSchema} >
+        <TextInput fieldName="required" />
+        <TextInput fieldName="optional" />
+      </Form>
+    </div>
+  )))
   .add('with TextInput', withState({ doc: {} }, (store) => (
     <Form store={store}>
       <TextInput fieldName="test" />

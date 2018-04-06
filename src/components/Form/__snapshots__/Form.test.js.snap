@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test within Form shallow a 2 TextInput 1`] = `
-<form>
+exports[`Form TextInput shallow a 2 TextInput 1`] = `
+<WithStyles(FormControl)>
   <pure(TextInput)
     doc={
       Object {
@@ -9,6 +9,7 @@ exports[`Test within Form shallow a 2 TextInput 1`] = `
         "test2": "Type Sample",
       }
     }
+    error={false}
     fieldName="test"
     key=".0"
     label="test"
@@ -22,6 +23,7 @@ exports[`Test within Form shallow a 2 TextInput 1`] = `
         "test2": "Type Sample",
       }
     }
+    error={false}
     fieldName="test2"
     key=".1"
     label="test2"
@@ -33,17 +35,18 @@ exports[`Test within Form shallow a 2 TextInput 1`] = `
   >
     Submit
   </WithStyles(Button)>
-</form>
+</WithStyles(FormControl)>
 `;
 
-exports[`Test within Form shallow a TextInput 1`] = `
-<form>
+exports[`Form TextInput shallow a TextInput 1`] = `
+<WithStyles(FormControl)>
   <pure(TextInput)
     doc={
       Object {
         "test": "Type Sample",
       }
     }
+    error={false}
     fieldName="test"
     key=".0"
     label="test"
@@ -55,5 +58,5 @@ exports[`Test within Form shallow a TextInput 1`] = `
   >
     Submit
   </WithStyles(Button)>
-</form>
+</WithStyles(FormControl)>
 `;

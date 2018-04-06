@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Form|Checkbox with Checkbox 1`] = `
-<form>
+<div
+  class="MuiFormControl-root-1"
+>
   <div
     class="MuiFormControl-root-1"
   >
@@ -97,11 +99,13 @@ exports[`Storyshots Form|Checkbox with Checkbox 1`] = `
       class="MuiTouchRipple-root-41"
     />
   </button>
-</form>
+</div>
 `;
 
 exports[`Storyshots Form|Checkbox with Checkbox and Text Iput 1`] = `
-<form>
+<div
+  class="MuiFormControl-root-1"
+>
   <div
     class="MuiFormControl-root-1"
   >
@@ -218,11 +222,13 @@ exports[`Storyshots Form|Checkbox with Checkbox and Text Iput 1`] = `
       class="MuiTouchRipple-root-41"
     />
   </button>
-</form>
+</div>
 `;
 
 exports[`Storyshots Form|Radio with Checkbox and Text Iput 1`] = `
-<form>
+<div
+  class="MuiFormControl-root-1"
+>
   <div
     class="MuiFormControl-root-1"
   >
@@ -345,11 +351,13 @@ exports[`Storyshots Form|Radio with Checkbox and Text Iput 1`] = `
       class="MuiTouchRipple-root-41"
     />
   </button>
-</form>
+</div>
 `;
 
 exports[`Storyshots Form|Radio with Radio 1`] = `
-<form>
+<div
+  class="MuiFormControl-root-1"
+>
   <div
     class="MuiFormControl-root-1"
   >
@@ -451,11 +459,13 @@ exports[`Storyshots Form|Radio with Radio 1`] = `
       class="MuiTouchRipple-root-41"
     />
   </button>
-</form>
+</div>
 `;
 
 exports[`Storyshots Form|TextInput with 2 TextInput 1`] = `
-<form>
+<div
+  class="MuiFormControl-root-1"
+>
   <div
     class="MuiFormControl-root-1"
   >
@@ -512,11 +522,13 @@ exports[`Storyshots Form|TextInput with 2 TextInput 1`] = `
       class="MuiTouchRipple-root-41"
     />
   </button>
-</form>
+</div>
 `;
 
 exports[`Storyshots Form|TextInput with TextInput 1`] = `
-<form>
+<div
+  class="MuiFormControl-root-1"
+>
   <div
     class="MuiFormControl-root-1"
   >
@@ -552,5 +564,77 @@ exports[`Storyshots Form|TextInput with TextInput 1`] = `
       class="MuiTouchRipple-root-41"
     />
   </button>
-</form>
+</div>
+`;
+
+exports[`Storyshots Form|TextInput with TextInput Schema Validator 1`] = `
+<div
+  style="display:flex;align-items:space-between;flex-direction:column"
+>
+  <h2
+    class="MuiTypography-root-48 MuiTypography-title-54 MuiTypography-gutterBottom-65"
+  >
+    If you hit submit without the required field a error is displayed
+  </h2>
+  <div
+    class="MuiFormControl-root-1"
+  >
+    <div
+      class="MuiFormControl-root-1"
+    >
+      <label
+        class="MuiFormLabel-root-5 MuiInputLabel-root-72 MuiInputLabel-formControl-73 MuiInputLabel-animated-76"
+        data-shrink="false"
+      >
+        required
+      </label>
+      <div
+        class="MuiInput-root-77 MuiInput-formControl-78 MuiInput-underline-81"
+      >
+        <input
+          aria-invalid="false"
+          aria-required="false"
+          class="MuiInput-input-85"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="MuiFormControl-root-1"
+    >
+      <label
+        class="MuiFormLabel-root-5 MuiInputLabel-root-72 MuiInputLabel-formControl-73 MuiInputLabel-animated-76"
+        data-shrink="false"
+      >
+        optional
+      </label>
+      <div
+        class="MuiInput-root-77 MuiInput-formControl-78 MuiInput-underline-81"
+      >
+        <input
+          aria-invalid="false"
+          aria-required="false"
+          class="MuiInput-input-85"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      class="MuiButtonBase-root-32 MuiButton-root-91"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiButton-label-92"
+      >
+        Submit
+      </span>
+      <span
+        class="MuiTouchRipple-root-41"
+      />
+    </button>
+  </div>
+</div>
 `;
