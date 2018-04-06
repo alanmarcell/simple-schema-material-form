@@ -5,12 +5,12 @@ import { compose, withStateHandlers, pure, withState } from 'recompact';
 import { FormControl } from 'material-ui/Form';
 import { Button } from 'material-ui';
 import handleSubmit from './submitHandler';
-import getChildProps from './getChildProps';
+import getChildProps, { formPropsFactory } from './getChildProps';
 
 /** Our Simple Form Test Utility */
 const SimpleForm = (props) => {
   const { doc, setDoc, errors } = props;
-  const setChildProps = getChildProps({ doc, setDoc, errors });
+  const setChildProps = getChildProps(formPropsFactory({ doc, setDoc, errors }));
   return (
     <FormControl >
       {React.Children.map(props.children, setChildProps)}

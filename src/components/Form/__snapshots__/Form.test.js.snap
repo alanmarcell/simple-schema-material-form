@@ -11,7 +11,7 @@ exports[`Form TextInput shallow a 2 TextInput 1`] = `
     }
     error={false}
     fieldName="test"
-    key=".0"
+    key=".0/.$.0"
     label="test"
     setDoc={[Function]}
     value="Type Sample"
@@ -25,7 +25,7 @@ exports[`Form TextInput shallow a 2 TextInput 1`] = `
     }
     error={false}
     fieldName="test2"
-    key=".1"
+    key=".0/.$.1"
     label="test2"
     setDoc={[Function]}
     value="Type Sample"

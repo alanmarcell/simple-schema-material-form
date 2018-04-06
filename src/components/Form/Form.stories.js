@@ -6,7 +6,7 @@ import { merge } from 'ramda';
 import Typography from 'material-ui/Typography';
 import SimpleSchema from 'simpl-schema';
 
-import { SimpleForm } from './Form';
+import SmartForm, { SimpleForm } from './Form';
 import TextInput from '../TextInput';
 import Checkbox from '../Checkbox';
 import Radio from '../Radio';
@@ -32,18 +32,18 @@ const SessionSchema = new SimpleSchema({
 });
 
 storiesOf('Form|TextInput', module)
-  .addDecorator(withTests('Form'))
-  .add('with TextInput Schema Validator', withState({ doc: {} }, (store) => (
+  .addDecorator(withTests('Form', 'FormValidation'))
+  .add('with TextInput Schema Validator', () => (
     <div style={{ display: 'flex', alignItems: 'space-between', flexDirection: 'column' }}>
       <Typography variant="title" gutterBottom>
         If you hit submit without the required field a error is displayed
       </Typography>
-      <Form store={store} schema={SessionSchema} >
+      <SmartForm schema={SessionSchema} onSubmit={action('Form Submited:')}>
         <TextInput fieldName="required" />
         <TextInput fieldName="optional" />
-      </Form>
+      </SmartForm>
     </div>
-  )))
+  ))
   .add('with TextInput', withState({ doc: {} }, (store) => (
     <Form store={store}>
       <TextInput fieldName="test" />
