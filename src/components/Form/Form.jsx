@@ -1,52 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { pathOr, merge, isNil, isEmpty, filter } from 'ramda';
+import { merge } from 'ramda';
 import { compose, withStateHandlers, pure, withState } from 'recompact';
 import { FormControl } from 'material-ui/Form';
 import { Button } from 'material-ui';
 import handleSubmit from './submitHandler';
-
-const hasError = (errors = [], fieldName) => {
-  if (isNil(errors)) {
-    return false;
-  }
-
-  const getError = error => {
-    if (error.name === fieldName) {
-      return error;
-    }
-
-    return null;
-  };
-
-  const fieldError = filter(getError, errors);
-
-  if (isEmpty(fieldError)) {
-    return false;
-  }
-
-  return true;
-};
-
-const getChildProps = ({ doc, setDoc, errors }) => Child => {
-  const { fieldName } = Child.props;
-  const value = pathOr('', [fieldName], doc);
-
-  const childProps = {
-    ...Child.props,
-    setDoc,
-    doc,
-    error: hasError(errors, fieldName),
-    value,
-    label: fieldName,
-  };
-
-  return React.createElement(
-    Child.type,
-    childProps,
-    null,
-  );
-};
+import getChildProps from './getChildProps';
 
 /** Our Simple Form Test Utility */
 const SimpleForm = (props) => {

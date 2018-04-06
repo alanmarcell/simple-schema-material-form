@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { path } from 'ramda';
 import { shallow } from 'enzyme';
 import { Button } from 'material-ui';
 import SimpleSchema from 'simpl-schema';
 import Form from './Form';
 import TextInput from '../TextInput';
+
+
+const newValue = 'Type Sample';
+const invalidMinValue = 'Typ';
+const validMinValue = 'Typing valid';
+const invalidRequired = '';
 
 describe('Form', () => {
   it('should renders without crashing', () => {
@@ -27,30 +34,48 @@ describe('Form', () => {
       //   type: String,
       // },
     });
+
+    const getChildren = (component, index) => {
+      const { children = [] } = component.props();
+      return shallow(path(index, children));
+    };
+
+    const setup = ({ FormComponent }) => {
+      const component = shallow(FormComponent);
+      const { children } = component.props();
+      const RequiredTextInput = component.find({ label: 'minRequired' });
+      const Submit = () => component.find(Button);
+
+      return {
+        component,
+        children,
+        RequiredTextInput,
+        Submit,
+      };
+    };
     describe('Minimun required', () => {
       const onSubmit = jest.fn();
       const FormComponent = (
         <Form schema={SessionSchema} onSubmit={doc => onSubmit(doc)}>
           <TextInput fieldName="minRequired" />
         </Form>);
-      const component = shallow(FormComponent);
-      const newValue = 'typ.aaa.';
-      let { children } = component.props();
-      let Children = shallow(children[0][0]);
-      Children.simulate('change', {
-        target: { value: newValue },
+
+      // eslint-disable-next-line
+      let { component, Submit } = setup({ onSubmit, FormComponent });
+      let textInput = getChildren(component, [0, 0]);
+
+      textInput.simulate('change', {
+        target: { value: invalidMinValue },
       });
 
-      let RequiredTextInput = component.find({ label: 'minRequired' });
+      Submit().simulate('click');
 
-      let button = component.find(Button);
-      button.simulate('click');
-
-      RequiredTextInput = component.find({ label: 'minRequired' });
+      textInput = getChildren(component, [0, 0]);
 
       describe('With error', () => {
         it('should add error prop if required field dont reach min required', () => {
-          expect(RequiredTextInput.props().error).toBe(true);
+          expect(textInput.props().value).toBe(invalidMinValue);
+          expect(textInput.props().error).toBe(true);
         });
 
         it.skip('submit should not be invoked if have errors', () => {
@@ -59,24 +84,20 @@ describe('Form', () => {
       });
 
       describe('Without error', () => {
-        ({ children } = component.props());
-        Children = shallow(children[0][0]);
+        let validTextInput = getChildren(component, [0, 0]);
 
-        let ValidTextInput = component.find({ label: 'minRequired' });
-        Children.simulate('change', {
-          target: { value: 'typing' },
+        validTextInput.simulate('change', {
+          target: { value: validMinValue },
         });
 
         component.update();
-        button = component.find(Button);
-
-        button.simulate('click');
+        Submit().simulate('click');
 
         component.update();
-        ValidTextInput = component.find({ label: 'minRequired' });
-
+        validTextInput = getChildren(component, [0, 0]);
         it('should remove error prop if required field reach min required', () => {
-          expect(ValidTextInput.props().error).toBe(false);
+          expect(validTextInput.props().value).toBe(validMinValue);
+          expect(validTextInput.props().error).toBe(false);
         });
 
         it('submit should be invoked if have no errors', () => {
@@ -88,32 +109,29 @@ describe('Form', () => {
 
     it('shallow a TextInput', () => {
       const onSubmit = jest.fn();
+
       const FormComponent = (
         <Form onSubmit={doc => onSubmit(doc)}>
           <TextInput fieldName="test" />
         </Form>);
+      // eslint-disable-next-line
+      let { Children, component, RequiredTextInput, Submit } = setup({ FormComponent });
 
-      const component = shallow(FormComponent);
-      const newValue = 'Type Sample';
-
-      const { children } = component.props();
-
-      const Children = shallow(children[0][0]);
-
-      Children.simulate('change', {
+      let textInput = getChildren(component, [0, 0]);
+      textInput.simulate('change', {
         target: { value: newValue },
       });
 
       component.update();
       const newState = component.state();
-      const newChildren = component.props().children[0][0];
-      const NewChildren = shallow(newChildren);
+
+      textInput = getChildren(component, [0, 0]);
 
       const { doc } = newState.childProps;
       const test2 = newState.childProps.doc.test;
 
       expect(test2).toBe(newValue);
-      expect(NewChildren.props().value).toBe(newValue);
+      expect(textInput.props().value).toBe(newValue);
       expect(component).toMatchSnapshot();
 
 
@@ -133,17 +151,16 @@ describe('Form', () => {
           <TextInput fieldName="test2" />
         </Form>);
 
-      const component = shallow(FormComponent);
+      // eslint-disable-next-line
+      let { Children, component, RequiredTextInput, Submit } = setup({ FormComponent });
 
-      const newValue = 'Type Sample';
-      const { children } = component.props();
-      const TextInput1 = shallow(children[0][0]);
-      const TextInput2 = shallow(children[0][1]);
+      let textInput1 = getChildren(component, [0, 0]);
+      let textInput2 = getChildren(component, [0, 1]);
 
-      TextInput1.simulate('change', {
+      textInput1.simulate('change', {
         target: { value: newValue },
       });
-      TextInput2.simulate('change', {
+      textInput2.simulate('change', {
         target: { value: newValue },
       });
       const newState = component.state();
@@ -151,12 +168,11 @@ describe('Form', () => {
 
       component.update();
 
-      const newChildren = component.props().children;
-      const NewTextInput1 = shallow(newChildren[0][0]);
-      const NewTextInput2 = shallow(newChildren[0][1]);
+      textInput1 = getChildren(component, [0, 0]);
+      textInput2 = getChildren(component, [0, 1]);
 
-      const button = component.find(Button);
-      button.simulate('click');
+      // Submit = component.find(Button);
+      Submit().simulate('click');
 
       const test2 = newState.childProps.doc.test;
 
@@ -168,8 +184,8 @@ describe('Form', () => {
       expect(doc).toEqual(expectedDoc);
 
       expect(test2).toBe(newValue);
-      expect(NewTextInput1.props().value).toBe(newValue);
-      expect(NewTextInput2.props().value).toBe(newValue);
+      expect(textInput1.props().value).toBe(newValue);
+      expect(textInput2.props().value).toBe(newValue);
       expect(component).toMatchSnapshot();
       expect(onSubmit).toHaveBeenCalled();
       expect(onSubmit).toBeCalledWith(doc);
