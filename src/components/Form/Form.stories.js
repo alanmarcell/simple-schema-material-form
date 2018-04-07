@@ -29,6 +29,10 @@ const SessionSchema = new SimpleSchema({
     type: String,
     min: 6,
   },
+  optional: {
+    type: String,
+    required: false,
+  },
 });
 
 storiesOf('Form|TextInput', module)

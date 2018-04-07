@@ -1,5 +1,6 @@
 import React from 'react';
 import { pathOr, isNil, isEmpty, filter, is, curry } from 'ramda';
+import { validateField } from './validateForm';
 
 const getFieldError = fieldName => error => {
   if (error.name === fieldName) {
@@ -17,13 +18,18 @@ const hasError = (errors = [], fieldName) => {
 };
 
 const fieldPropsFactory = curry((props, fieldName) => {
-  const { doc, setDoc, errors } = props;
+  const {
+    doc, setDoc, errors, schema, addError,
+  } = props;
 
   const value = pathOr('', [fieldName], doc);
   const childProps = {
     // ...Child.props,
     setDoc,
     doc,
+    onBlur: () => validateField({
+      schema, doc, addError, fieldName,
+    }),
     error: hasError(errors, fieldName),
     value,
     label: fieldName,

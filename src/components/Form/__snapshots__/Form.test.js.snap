@@ -13,6 +13,7 @@ exports[`Form TextInput shallow a 2 TextInput 1`] = `
     fieldName="test"
     key=".0/.$.0"
     label="test"
+    onBlur={[Function]}
     setDoc={[Function]}
     value="Type Sample"
   />
@@ -27,6 +28,7 @@ exports[`Form TextInput shallow a 2 TextInput 1`] = `
     fieldName="test2"
     key=".0/.$.1"
     label="test2"
+    onBlur={[Function]}
     setDoc={[Function]}
     value="Type Sample"
   />
@@ -50,6 +52,7 @@ exports[`Form TextInput shallow a TextInput 1`] = `
     fieldName="test"
     key=".0"
     label="test"
+    onBlur={[Function]}
     setDoc={[Function]}
     value="Type Sample"
   />

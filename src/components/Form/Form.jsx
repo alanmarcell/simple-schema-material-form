@@ -1,16 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { merge } from 'ramda';
-import { compose, withStateHandlers, pure, withState } from 'recompact';
+import {
+  head, keys, merge, findIndex, propEq, update, isEmpty, remove, append,
+} from 'ramda';
+import { compose, pure, withState, withHandlers } from 'recompact';
 import { FormControl } from 'material-ui/Form';
 import { Button } from 'material-ui';
 import handleSubmit from './submitHandler';
 import getChildProps, { formPropsFactory } from './getChildProps';
+import { validateField } from './validateForm';
 
 /** Our Simple Form Test Utility */
 const SimpleForm = (props) => {
-  const { doc, setDoc, errors } = props;
-  const setChildProps = getChildProps(formPropsFactory({ doc, setDoc, errors }));
+  const {
+    doc, setDoc, errors, schema, setErrors, addError,
+  } = props;
+  const setChildProps = getChildProps(formPropsFactory({
+    schema, setErrors, doc, setDoc, errors, addError,
+  }));
   return (
     <FormControl >
       {React.Children.map(props.children, setChildProps)}
@@ -23,19 +30,42 @@ const SimpleForm = (props) => {
 const enhance = compose(
   pure,
   withState('errors', 'setErrors', []),
-  withStateHandlers(
-    /** this our initial doc */
-    { doc: {} },
-    {
-      /** this is the doc state handler */
-      setDoc: ({ doc }) => value => {
-        const merged = merge(doc, value);
-        return {
-          doc: merged,
-        };
-      },
+  /** this our initial doc */
+  withState('doc', 'updateDoc', {}),
+  withHandlers({
+    addError: ({ errors, setErrors }) => (newErrors, fieldName) => {
+      const err = findIndex(propEq('name', fieldName))(errors);
+
+      if (isEmpty(newErrors)) {
+        if (err >= 0) {
+          return setErrors(remove(err, 1, errors));
+        }
+        return setErrors(errors);
+      }
+      if (err >= 0) {
+        const updated = update(err, newErrors[0], errors);
+        return setErrors(updated);
+      }
+      return setErrors(append(newErrors[0], errors));
     },
-  ),
+  }),
+  /** this is the doc state handler */
+  withHandlers({
+    setDoc: ({
+      doc, schema, addError, errors, updateDoc,
+    }) => value => {
+      const merged = merge(doc, value);
+      const fieldName = head(keys(value));
+
+      const fieldHasError = findIndex(propEq('name', fieldName))(errors);
+      if (fieldHasError >= 0) {
+        validateField({
+          doc: merged, schema, addError, fieldName,
+        });
+      }
+      return updateDoc(merged);
+    },
+  }),
 );
 
 const EnhancedSimpleForm = enhance(SimpleForm);
