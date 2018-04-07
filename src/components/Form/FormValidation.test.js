@@ -93,7 +93,6 @@ describe('Text Input Validation', () => {
 
         component.update();
         validTextInput = getChildren(component, [0, 0]);
-        console.log('validTextInput.props()', component.state().childProps);
         expect(validTextInput.props().value).toBe(validMinValue);
         expect(validTextInput.props().error).toBe(false);
       });
