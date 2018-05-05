@@ -1,9 +1,6 @@
-import React, {Component} from 'react'
+import SimpleSchemaReactForm from './Form';
+import Field from './Field';
+import Submit from './Submit';
 
-export default class extends Component {
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
-}
+export { Field, Submit };
+export default SimpleSchemaReactForm;
