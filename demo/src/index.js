@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
 import SimpleSchema from 'simpl-schema';
-import Input, { InputLabel } from 'material-ui/Input';
-import { withStyles } from 'material-ui/styles';
-import { FormControl, FormHelperText } from 'material-ui/Form';
-import { compose, pure } from 'recompose';
 import MaterialButton from 'material-ui/Button';
+import Icon from 'material-ui/Icon';
+import { merge, range } from 'ramda';
+import TextInput from './TextInput';
+import Radio from './Radio';
 
-import ReactForm, { Field, Submit } from '../../src';
+import ReactForm, { Field, Submit, ArrayField } from '../../src';
 
 const SessionSchema = new SimpleSchema({
   required: {
@@ -18,42 +18,76 @@ const SessionSchema = new SimpleSchema({
     type: String,
     required: false,
   },
-});
 
-const textInput = ({
-  value,
-  classes,
-  onChange,
-  label,
-  helperText = {},
-  error = false,
-  ...props
-}) => {
-  return (
-    <FormControl className={classes.formControl}>
-      <InputLabel htmlFor="name-simple" error={error} >{label}</InputLabel>
-      <Input {...{ value, onChange, error }} {...props} />
-      {error &&
-        <FormHelperText error={error} id="name-helper-text">
-          {helperText.message}
-        </FormHelperText>
-      }
-    </FormControl>
-  );
-};
-
-const styles = theme => ({
-  formControl: {
-    margin: theme.spacing.unit,
+  consumption: {
+    type: String,
+    allowedValues: [
+      'smoke',
+      'vaporizer',
+      'edibles',
+      'drink',
+      'pills',
+      'spray',
+      'dye',
+    ],
   },
 });
 
-const enhance = compose(
-  pure,
-  withStyles(styles),
-);
+const getStarStyle = (i, score = 10) => {
+  if (i > score) {
+    return { color: 'white' };
+  }
 
-const TextInput = enhance(textInput);
+  if (i < 3) {
+    return { color: 'red' };
+  }
+
+  if (i < 7) {
+    return { color: 'yellow' };
+  }
+
+  return { color: 'green' };
+};
+
+
+const ReviewComponent = ({ fieldName, onSubmit, ...props }) => {
+  const { setDoc, doc } = props;
+  debugger;
+
+  const dez = range(0, 10);
+
+  return (
+    <div>
+      {dez.map((a, i) => (
+        <MaterialButton
+          key={a}
+          size="small"
+          onClick={() => setDoc(merge(doc, {
+            [fieldName]: {
+              ...doc[fieldName],
+              score: i,
+            },
+          }))}
+        >
+          <Icon
+            style={{
+              fontSize: 30, position: 'absolute', zIndex: 99, ...getStarStyle(i),
+            }}
+          // color={i > 5 ? 'inherit' : 'action'}
+          >star_rate
+          </Icon>
+          <Icon
+            style={{ ...getStarStyle(i, doc[fieldName].score), zIndex: 100 }}
+          // color={i > 5 ? 'inherit' : 'action'}
+          >star_rate
+          </Icon>
+        </MaterialButton>
+      ))
+      }
+    </div>
+
+  );
+};
 
 const Demo = () => {
   const formProps = {
@@ -73,9 +107,15 @@ const Demo = () => {
         <ReactForm {...formProps} >
           <Field fieldName="required" Component={TextInput} />
           <Field fieldName="optional" type="password" Component={TextInput} />
-          <div>
-            <Submit Component={MaterialButton} />
-          </div>
+          <ArrayField
+            fieldName="consumption"
+            // selectOptions={[{ label: 1, key: 'um' }, { label: 2, key: 'dois' }]}
+            Component={Radio}
+          />
+
+          {/* <Field fieldName="look" Component={ReviewComponent}/> */}
+
+          <Submit Component={MaterialButton} />
         </ReactForm>
       </div>
       <div>
@@ -83,6 +123,8 @@ const Demo = () => {
         <ReactForm {...formProps} >
           <Field type="text" fieldName="required" />
           <Field type="password" fieldName="optional" />
+          {/* <Field fieldName="look" Component={ReviewComponent}/> */}
+
 
           <Submit />
         </ReactForm>

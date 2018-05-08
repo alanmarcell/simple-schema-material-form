@@ -1,5 +1,5 @@
-import enhance from './fieldFactory';
-import Field from './Field';
+import enhance from '../Field/fieldFactory';
+import Field from './ArrayField';
 
 // const enhance = compose(withState('value', 'setvalue', ({ value }) => value));
 
@@ -9,3 +9,4 @@ import Field from './Field';
 const EnhancedField = enhance(Field);
 
 export default EnhancedField;
+

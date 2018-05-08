@@ -1,25 +1,7 @@
-import React from 'react';
 import { branch, renderComponent } from 'recompose';
 import { isNil } from 'ramda';
-
-const DefaultField = props => {
-  const { helperText, error, ...rest } = props;
-
-  return (
-    <div>
-      <label>
-        {helperText}
-      </label>
-      <div>
-        <input {...rest} />
-      </div>
-    </div>
-  );
-};
-
-const CustomField = ({ Component, ...props }) => {
-  return <Component {...props} />;
-};
+import CustomField from './CustomField';
+import DefaultField from './DefaultField';
 
 const renderSubmitButton = isDefaultButton =>
   branch(

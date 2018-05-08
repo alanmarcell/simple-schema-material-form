@@ -19,10 +19,12 @@ const fieldPropsFactory = curry((props, fieldName) => {
     onBlur: () => validateField({
       schema, doc, addError, fieldName,
     }),
+    schema,
     helperText: helperText && helperText.message,
     error,
     value,
     label: fieldName,
+    fieldName,
     onSubmit,
   };
 
@@ -83,13 +85,13 @@ const renderChild = props => Child => {
       null,
     );
   }
-  debugger
+  // debugger
   const childIsNotFieldType = shouldRender(Child);
-
+  
   if (childIsNotFieldType) {
     return childIsNotFieldType;
   }
-
+  
   const { fieldName } = Child.props;
   const childProps = {
     ...Child.props,
@@ -122,5 +124,19 @@ const formPropsFactory = props => {
 const childPropsFactory = formProps =>
   renderChild(formPropsFactory(formProps));
 
-export { formPropsFactory };
+const Fields = props => {
+
+  const {
+    doc, setDoc, errors, schema, setErrors, addError, onSubmit,
+  } = props;
+
+  const setChildProps = childPropsFactory({
+    schema, setErrors, doc, setDoc, errors, addError, onSubmit,
+  });
+
+  // debugger;
+  return React.Children.map(props.children, setChildProps);
+}
+
+export { formPropsFactory, Fields };
 export default childPropsFactory;

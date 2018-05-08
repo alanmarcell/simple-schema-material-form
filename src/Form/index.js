@@ -1,7 +1,7 @@
 import React from 'react';
 import { compose, pure, withState, withHandlers } from 'recompose';
 import { head, keys, merge, findIndex, propEq, isEmpty, remove, append, update } from 'ramda';
-import renderChild from './getChildProps';
+import renderChild, { Fields } from './getChildProps';
 import validateField from './validateForm';
 
 const ReactForm = (props) => {
@@ -9,13 +9,11 @@ const ReactForm = (props) => {
     doc, setDoc, errors, schema, setErrors, addError, onSubmit, style,
   } = props;
 
-  const setChildProps = renderChild({
-    schema, setErrors, doc, setDoc, errors, addError, onSubmit,
-  });
+  console.log('ReactForm', props)
 
   return (
     <div style={style} >
-      {React.Children.map(props.children, setChildProps)}
+      <Fields {...props} />
     </div>
   );
 };
